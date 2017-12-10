@@ -1,2 +1,2 @@
-cd medical_prescription
+cd BDM
 coverage html

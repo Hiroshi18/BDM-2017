@@ -23,12 +23,12 @@ find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
 echo "Delete old staticfiles dir"
 find . -path "*/staticfiles/*"  -delete
 echo "Create makemigrations and migrate"
-python3 medical_prescription/manage.py makemigrations
-python3 medical_prescription/manage.py migrate
+python3 BDM/manage.py makemigrations
+python3 BDM/manage.py migrate
 echo "Load all datas"
-python3 medical_prescription/manage.py loaddata dataFinal.json
+python3 BDM/manage.py loaddata dataFinal.json
 echo "Collecting static"
-python3 medical_prescription/manage.py collectstatic
+python3 BDM/manage.py collectstatic
 echo "Run server"
-python3 medical_prescription/manage.py runserver 0.0.0.0:8000 & .
+python3 BDM/manage.py runserver 0.0.0.0:8000 & .
 ./node_modules/.bin/gulp default

@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^prescription/', include('prescription.urls')),
     url(r'^chat/', include('chat.urls')),
     url(r'^recommendation/', include('recommendation.urls')),
+    url(r'^database/', include('database.urls')),
     url(r'^%s(?P<path>.*)$' % settings.MEDIA_URL[1:], protected_serve, {'document_root': settings.MEDIA_ROOT}),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

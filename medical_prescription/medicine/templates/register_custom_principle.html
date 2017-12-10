@@ -1,0 +1,28 @@
+{% extends "dashboardHealthProfessional/template.html" %} {% block content %} {% load staticfiles %} {% load static %} {% load i18n %}
+
+<div class="container" style="display:none;" id="myAlert">
+</div>
+<form method="POST" class="post-form">
+  <div class="form-group">
+  {% csrf_token %}
+  <div class="col-sm-12">
+    <font size="5">
+      <span class="label label-primary">{% trans "Nome do Principio Ativo" %}</span>
+    </font>
+  {{ form.name }}
+  <div class="col-sm-12">
+    <div class="col-sm-2 col-sm-push-5">
+      <br>
+      <button type="submit" class="save btn btn-success" value="showAlert" onclick="showAlert();">{% trans "Cadastrar" %}</button>
+    </div>
+</div>
+</form>
+<script>
+function showAlert(){
+  if($("#myAlert").find("div#myAlert2").length==0){
+    $("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'>Principio ativo criado com sucesso.</div>");
+  }
+  $("#myAlert").css("display", "");
+}
+</script>
+{% endblock %}

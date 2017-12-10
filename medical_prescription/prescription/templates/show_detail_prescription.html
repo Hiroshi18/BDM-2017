@@ -1,0 +1,90 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static "prescription/css/autocomplete.css" %}">
+<link rel="stylesheet" href="{% static "prescription/css/modal_prescription.css" %}">
+<link rel="stylesheet" href="{% static "prescription/css/select.css" %}">
+<link rel="stylesheet" href="{% static "prescription/css/hidden_email.css" %}">
+
+ <div class="js-prescription-create-form">
+   <div class="modal-header">
+     <a href="#" class="class pull-right btn-return-modal"><span class="glyphicon glyphicon-remove"></span></a>
+     <h3 class="modal-title">Prescrição</h3>
+   </div>
+
+     <div class="modal-body modal-open">
+
+       <!-- This fields are responsable off patient information. -->
+       {% csrf_token %}
+
+       <div class="cid-list">
+         <b>Paciente</b>: {{prescription.nopatientprescription.patient}}{{prescription.patientprescription.patient.name}}<br>
+         <b>CID</b>: {{prescription.cid.description}}<br>
+         <br>
+       </div>
+
+       <div class="medicines-list">
+         {% if prescription.medicines.all.count|add:prescription.manipulated_medicines.all.count > 0 %}
+           <h3>Medicamentos</h3>
+         {% endif %}
+
+         {% for medicine_prescription in prescription.prescriptionhasmedicine_set.all %}
+               <b>Nome</b>: {{medicine_prescription.medicine.name}}<br>
+               <b>Via</b>: {{medicine_prescription.via}}<br>
+               <b>Posologia</b>: {{medicine_prescription.posology}}<br>
+               <b>Quantidade</b>: {{medicine_prescription.get_quantity_display}}<br>
+               <br>
+         {% endfor %}
+
+         {% for medicine_prescription in prescription.prescriptionhasmanipulatedmedicine_set.all %}
+               <b>Nome</b>: {{medicine_prescription.manipulated_medicine.recipe_name}}<br>
+               <b>Via</b>: {{medicine_prescription.via}}<br>
+               <b>Posologia</b>: {{medicine_prescription.posology}}<br>
+               <b>Quantidade</b>: {{medicine_prescription.get_quantity_display}}<br>
+               <br>
+         {% endfor %}
+       </div>
+       <div class="exams-list">
+         {% if prescription.default_exams.all.count|add:prescription.custom_exams.all.count|add:prescription.new_exams.all.count > 0%}
+         <h3>Exames</h3>
+         {% endif %}
+
+         {% for exam in prescription.default_exams.all %}
+               <b>Descrição</b>: {{ exam.description }}<br>
+               <br>
+         {% endfor %}
+
+         {% for exam in prescription.custom_exams.all %}
+               <b>Descrição</b>: {{ exam.description }}<br>
+               <br>
+         {% endfor %}
+
+         {% for new_exams in prescription.new_exams.all %}
+               <b>Descrição</b>: {{ new_exams.exam_description}}<br>
+               <br>
+         {% endfor %}
+
+       </div>
+
+       <div class="recommendations-list">
+         {% if prescription.new_recommendations.all.count|add:prescription.custom_recommendations.all.count > 0%}
+         <h3>Recomendações</h3>
+         {% endif %}
+         {% for new_recommendations in prescription.new_recommendations.all %}
+               <b>Descrição</b>: {{ new_recommendations.recommendation_description }}<br>
+               <br>
+         {% endfor %}
+         {% for custom_recommendations in prescription.custom_recommendations.all %}
+               <b>Descrição</b>: {{ custom_recommendations.recommendation }}<br>
+               <br>
+         {% endfor %}
+       </div>
+                       <!-- End Via Panel structure -->
+           </div>
+     </div>
+ <div class="modal-footer">
+   <div class="row text-center center-block">
+       <button class="col-lg-2 btn btn-primary btn-return-modal">Voltar</button>
+       <button class="col-centered js-show-prescription btn btn-primary" data-url='{% url 'show_patterns' prescription.pk %}'>Imprimir <i class="fa fa-print"></i></button>
+       <button class="col-lg-2 js-create-copy btn btn-primary btn-return-modal pull-right" data-url="{% url 'copy_prescription' prescription.pk %}">Editar Cópia</button>
+    </div>
+ </div>

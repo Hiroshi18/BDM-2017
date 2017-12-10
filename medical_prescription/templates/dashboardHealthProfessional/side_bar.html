@@ -1,0 +1,130 @@
+{% load static %} {% load staticfiles %} {% load i18n %}
+
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+
+    <!-- Sidebar user panel (optional) -->
+
+
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">Menu</li>
+      <!-- Optionally, you can add icons to the links -->
+      <li class= "treeview">
+        <a href="#">
+          <i class="fa fa-files-o"></i><span>{% trans "Prescrições" %}</span>
+          <span class ="pull-right-container">
+            <i class = "fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class = "treeview-menu">
+            <li><a href="{% url 'list_prescription' %}">{% trans "Listar Prescrições"%}</a></li>
+            <li><a href="{% url 'create_prescription_model' %}">{% trans "Criar Modelo de Prescrição"%}</a></li>
+            <li><a href="{% url 'list_patterns' %}">{% trans "Listar modelos de impressão"%}</a></li>
+        </ul>
+      </li>
+
+
+
+      <li class= "treeview">
+        <a href="#">
+          <i class="fa fa-plus"></i><span>{% trans "Cadastrar" %}</span>
+          <span class ="pull-right-container">
+            <i class = "fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class = "treeview-menu">
+          <li><a href="{% url 'add_patient' %}">{% trans "Paciente"%}</a></li>
+          <li><a href="#">{% trans "Receita"%}</a></li>
+          <li><a href="{% url 'create_custom_exams' %}">{% trans "Exame"%}</a></li>
+          <li><a href="{% url 'create_medicine' %}">{% trans "Medicamento"%}</a></li>
+          <li><a href="{% url 'create_activePrinciple' %}">{% trans "Princípio ativo"%}</a></li>
+          <li><a href="{% url 'create_custom_recomendation' %}">Recomendações Customizadas</a></li>
+        </ul>
+      </li>
+
+
+      <li class="treeview">
+        <a href="#"><i class="fa fa-medkit"></i> <span>{% trans "Exames"%}</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{% url 'list_exams' %}">{% trans "Visualizar Exames"%}</a></li>
+          <li><a href="{% url 'list_custom_exams' %}">{% trans "Visualizar Exames Personalizados"%}</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+                <a href="#"><i class="fa fa-users"></i> <span>{% trans "Pacientes"%}</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+                <ul class="treeview-menu">
+                    <li><a href="{% url 'add_patient' %}">{% trans "Adicionar paciente"%}</a></li>
+                    <li><a href="{% url 'list_linked_patients' %}">{% trans "Visualizar pacientes"%}</a></li>
+                </ul>
+    </li>
+
+
+      <li class="treeview">
+        <a href="#"><i class="fa fa-medkit"></i> <span>{% trans "Medicamentos"%}</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+                <ul class="treeview-menu">
+                    <li><a href="{% url 'list_all_medicines' %}">{% trans "Visualizar medicamentos"%}</a></li>
+                    <li><a href="{% url 'list_manipulated_medicines' %}">{% trans "Visualizar manipulados"%}</a></li>
+                    <li><a href="{% url 'list_all_principle' %}">{% trans "Visualizar princípios ativos"%}</a></li>
+                </ul>
+            </li>
+
+        <li class="treeview">
+          <a href="{% url 'list_custom_recommendations' %}"><i class="fa fa-file"></i> <span>Recomendações</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{% url 'list_custom_recommendations' %}">Recomedações Customizadas</a></li>
+          </ul>
+        </li>
+
+      <li class="treeview">
+        <a href="{% url 'disease_list' %}"><i class="fa fa-heartbeat"></i> <span>{% trans "Doenças"%}</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{% url 'disease_list' %}">{% trans "Doenças"%}</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="pages/mailbox/mailbox.html">
+          <i class="fa fa-envelope"></i> <span>{% trans "Conversas" %} </span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{% url 'outbox' %}">{% trans "Mensagens"%}</a></li>
+          <li><a href="{% url 'compose' %}">{% trans "Nova Mensagem"%}</a></li>
+        </ul>
+      </li>
+
+      <li><a href="{% url 'dashboard_hp' %}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <li><a href="{% url 'edit_profile' %}"><i class="fa fa-cog"></i> <span>Configurações</span></a></li>
+    </ul>
+
+    <!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,37 @@
+{% extends "dashboardHealthProfessional/template.html" %}
+
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+
+<!-- Panel -->
+
+{% csrf_token %}
+    <form class="post-form"  action=''  method="POST">
+      <div class="form-group">
+      {% csrf_token %}
+      <div class="col-md-12">
+      <font size="5">
+        <span class="label label-primary">{% trans "Nome do Exame" %}</span>
+      </font>
+      <br>
+      {{ form.name }}
+    </div>
+      <br><br>
+
+      <div class="col-sm-12">
+      <font size="5">
+        <span class="label label-primary">{% trans "Descrição" %}</span>
+      </font>
+      <br>
+      {{ form.description }}
+    </div>
+       <br><br>
+       <div class="col-sm-2 col-sm-push-5">
+         <br>
+         <button type="submit" class="btn btn-success">{% trans "Cadastrar" %}</button>
+       </div>
+     </div>
+    </form>
+{% endblock %}

@@ -30,7 +30,7 @@ SECRET_KEY = 'kw&cp#em42$66%lprfln@!25t%(wb9j4gzz%vxaah(v-e8zxbt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['preskribe.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['bdm-2017.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Set initial database

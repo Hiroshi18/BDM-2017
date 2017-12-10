@@ -19,7 +19,7 @@ def protected_serve(request, path, document_root=None, show_indexes=False):
 
 urlpatterns = [
     url(r'^user/', include('user.urls')),
-    url(r'^dashboard_health_professional/', include('dashboardHealthProfessional.urls')),
+    url(r'^dashboard/', include('dashboardHealthProfessional.urls')),
     url(r'^medicine/', include('medicine.urls')),
     url(r'^dashboard_patient/', include('dashboardPatient.urls')),
     url(r'^exam/', include('exam.urls')),

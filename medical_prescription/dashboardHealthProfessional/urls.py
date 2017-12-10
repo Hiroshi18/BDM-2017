@@ -5,7 +5,7 @@ from dashboardHealthProfessional.views import (HomeHealthProfessional,
 
 
 urlpatterns = (
-    url(r'^health_professional/$', HomeHealthProfessional.as_view(), name='dashboard_hp'),
+    url(r'^user/$', HomeHealthProfessional.as_view(), name='dashboard_hp'),
     url(r'^ajax/chart_data/$', ChartData.as_view(), name='chart_data')
 
 )

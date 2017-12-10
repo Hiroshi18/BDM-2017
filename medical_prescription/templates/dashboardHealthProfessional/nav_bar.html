@@ -13,11 +13,11 @@
   </script>
 
     <!-- Logo -->
-    <a href="{% url 'dashboard_hp' %}" class="logo">
+    <a href="#" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>R+</b></span>
+        <span class="logo-mini"><b>BDM</b></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Receita Mais</b></span>
+        <span class="logo-lg"><b>Biblioteca Digital</b></span>
     </a>
 
     <!-- Header Navbar -->
@@ -30,30 +30,8 @@
         <div class="navbar-custom-menu">
 
             <ul class="nav navbar-nav">
-                <li><a class="js-create-prescription" data-url="{% url 'create_modal' %}">{% trans "Nova Prescrição"%}</a></li>
-                <li><a href="{% url 'create_medicine' %}">{% trans "Novo Manipulado"%}</a></li>
 
                 <!-- Messages: style can be found in dropdown.less-->
-                <li class="dropdown messages-menu">
-                    <!-- Menu toggle button -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="label label-success" id="cont_responses"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header"></li>
-                        <li>
-                            <!-- inner menu: contains the messages -->
-                            <ul class="menu"  id="notify_responses">
-                                    <!-- start message -->
-
-                                    <!-- end message -->
-                            </ul>
-                            <!-- /.menu -->
-                            </li>
-                            <li class="footer"><a href="{% url 'outbox' %}">{% trans "Veja todas as mensagens"%}</a></li>
-                    </ul>
-                </li>
 
                 <!-- /.messages-menu -->
 
@@ -104,13 +82,13 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="{% url 'edit_profile' %}" class="btn btn-default btn-flat">{% trans "Perfil"%}</a>
+                                    <a href="#" class="btn btn-default btn-flat">{% trans "Perfil"%}</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{% url 'logout' %}" class="btn btn-default btn-flat">{% trans "Sair"%}</a>
+                                    <a href="#" class="btn btn-default btn-flat">{% trans "Sair"%}</a>
                                 </div>
                                 <div class="pull-left">
-                                    <a href="{% url 'edit_hp_password' request.user.email %}" class="btn btn-default btn-flat">{% trans "Editar Senha"%}</a>
+                                    <a href="#" class="btn btn-default btn-flat">{% trans "Editar Senha"%}</a>
                                 </div>
                             </li>
                         </ul>

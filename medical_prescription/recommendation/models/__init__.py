@@ -1,2 +1,0 @@
-from .customrecomendation import CustomRecommendation
-from .newrecommendation import NewRecommendation

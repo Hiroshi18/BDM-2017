@@ -1,8 +1,11 @@
 {% extends "dashboardUser/template.html" %} {% block content %} {% load staticfiles %} {% load static %} {% load i18n %}
-    <form method="POST">
-    <input type="text" name="/list_work_ent">
-    <button type="submit">Buscar Titulo</button>
+    <form id="searchform" action="{% url 'search_work_ent' %}" method="get" accept-charset="utf-8">
+      <button class="searchbutton" type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+      <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search">
     </form>
+
     <div class="panel-body">
         <!-- tab component -->
         <table class="table table-striped table-bordered table-hover">

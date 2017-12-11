@@ -5,7 +5,9 @@ from database.views import ListWorkEntView
 
 
 class SearchWorkEntView(ListWorkEntView):
-
+    """
+    Display a Blog List page filtered by the search query.
+    """
     paginate_by = 20
 
     def get_queryset(self):

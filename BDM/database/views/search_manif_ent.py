@@ -1,10 +1,10 @@
 # Django
 
 # Local Django
-from database.views import ListWorkEntView
+from database.views import ListManifEntView
 
 
-class SearchWorkEntView(ListWorkEntView):
+class SearchManifEntView(ListManifEntView):
 
     paginate_by = 20
 
@@ -12,6 +12,6 @@ class SearchWorkEntView(ListWorkEntView):
         query = self.request.GET.get('q')
         if query:
             if len(query) > 0:
-                return self.model.objects.filter(titleOfTheWork__icontains=query)
+                return self.model.objects.filter(titleOfTheManifestation__icontains=query)
             else:
                 return self.model.objects.filter()

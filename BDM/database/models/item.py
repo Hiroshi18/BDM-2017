@@ -1,3 +1,6 @@
+# Standard Library
+from datetime import date
+
 # Django
 from django.db import models
 

@@ -1,3 +1,6 @@
+# Standard Library
+from datetime import date
+
 # Django
 from django.db import models
 
@@ -11,7 +14,7 @@ class ManifEnt(models.Model):
     editionIssueDesignation = models.CharField(max_length=1000, blank=True, null=True)
     placeOfPublicationDistribution = models.CharField(max_length=1000, blank=True, null=True)
     publisherDistributor = models.CharField(max_length=1000, blank=True, null=True)
-    dateOfPublicationDistribution = models.CharField(max_length=1000, blank=True, null=True)
+    dateOfPublicationDistribution = models.DateField(blank=False, default=date.today)
     fabricatorManufacturer = models.CharField(max_length=1000, blank=True, null=True)
     seriesStatement = models.CharField(max_length=1000, blank=True, null=True)
     formOfCarrier = models.CharField(max_length=1000, blank=True, null=True)

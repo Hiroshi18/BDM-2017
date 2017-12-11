@@ -1,3 +1,6 @@
+# Standard Library
+from datetime import date
+
 # Django
 from django.db import models
 
@@ -8,7 +11,7 @@ class ExprEnt(models.Model):
     identifier = models.CharField(max_length=1000, blank=True, null=True)
     titleOfTheExpression = models.CharField(max_length=1000, blank=True, null=True)
     formOfExpression = models.CharField(max_length=1000, blank=True, null=True)
-    dateOfExpression = models.CharField(max_length=1000, blank=True, null=True)
+    dateOfExpression = models.DateField(blank=False, default=date.today)
     languageOfExpression = models.CharField(max_length=1000, blank=True, null=True)
     otherDistinguishingCharacteristic = models.CharField(max_length=1000, blank=True, null=True)
     extensibilityOfExpression = models.CharField(max_length=1000, blank=True, null=True)

@@ -6,8 +6,8 @@ from database.models import ExprEnt
 
 
 class ListExprEntView(ListView):
-    template_name = 'list_expr__ent.html'
-    context_object_name = 'list_expr__ent'
+    template_name = 'list_expr_ent.html'
+    context_object_name = 'list_expr_ent'
     model = ExprEnt
     paginate_by = 20
 

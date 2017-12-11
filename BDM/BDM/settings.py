@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'database',
     'medicine',
     'localflavor',
     'user',
@@ -51,7 +52,6 @@ INSTALLED_APPS = [
     'exam',
     'chat',
     'recommendation',
-    'database',
 ]
 
 # ====== DONT REMOVE -ME

@@ -6,6 +6,7 @@ from django.db import models
 
 # Local Django
 
+
 class WorkEnt(models.Model):
     identifier = models.CharField(max_length=1000, blank=True, null=True)
     titleOfTheWork = models.CharField(max_length=1000, blank=True, null=True)

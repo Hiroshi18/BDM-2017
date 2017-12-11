@@ -1,46 +1,38 @@
-# # This is an auto-generated Django model module.
-# # You'll have to do the following manually to clean this up:
-# #   * Rearrange models' order
-# #   * Make sure each model has one field with primary_key=True
-# #   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
-# #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# # Feel free to rename the models, but don't rename db_table values or field names.
-#
-# from __future__ import unicode_literals
-#
-# from django.db import models
-#
-#
-# class ExprAttrib(models.Model):
-#     expr_attrib_id = models.AutoField(db_column='EXPR_ATTRIB_ID', primary_key=True)  # Field name made lowercase.
-#     expr_attrib_version = models.IntegerField(db_column='EXPR_ATTRIB_VERSION', blank=True, null=True)  # Field name made lowercase.
-#     expr_attrib_class = models.CharField(db_column='EXPR_ATTRIB_CLASS', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     attrib_list_order = models.IntegerField(db_column='ATTRIB_LIST_ORDER', blank=True, null=True)  # Field name made lowercase.
-#     text_val = models.CharField(db_column='TEXT_VAL', max_length=20480, blank=True, null=True)  # Field name made lowercase.
-#     avail_val = models.CharField(db_column='AVAIL_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     funct_val = models.CharField(db_column='FUNCT_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     juris_val = models.CharField(db_column='JURIS_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     normal_val = models.CharField(db_column='NORMAL_VAL', max_length=512, blank=True, null=True)  # Field name made lowercase.
-#     offset_val = models.IntegerField(db_column='OFFSET_VAL', blank=True, null=True)  # Field name made lowercase.
-#     quant_val = models.IntegerField(db_column='QUANT_VAL', blank=True, null=True)  # Field name made lowercase.
-#     time_val = models.CharField(db_column='TIME_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     type_val = models.CharField(db_column='TYPE_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     vocab_val = models.CharField(db_column='VOCAB_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     expr_ent = models.ForeignKey('ExprEnt', models.DO_NOTHING, db_column='EXPR_ENT_ID', blank=True, null=True)  # Field name made lowercase.
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'EXPR_ATTRIB'
-#
-#
-# class ExprEnt(models.Model):
-#     expr_ent_id = models.AutoField(db_column='EXPR_ENT_ID', primary_key=True)  # Field name made lowercase.
-#     expr_ent_version = models.IntegerField(db_column='EXPR_ENT_VERSION', blank=True, null=True)  # Field name made lowercase.
-#     expr_ent_uri = models.CharField(db_column='EXPR_ENT_URI', max_length=512, blank=True, null=True)  # Field name made lowercase.
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'EXPR_ENT'
+# Django
+from django.db import models
+
+# Local Django
+
+
+class ExprEnt(models.Model):
+    identifier = models.CharField(max_length=1000, blank=True, null=True)
+    titleOfTheExpression = models.CharField(max_length=1000, blank=True, null=True)
+    formOfExpression = models.CharField(max_length=1000, blank=True, null=True)
+    dateOfExpression = models.CharField(max_length=1000, blank=True, null=True)
+    languageOfExpression = models.CharField(max_length=1000, blank=True, null=True)
+    otherDistinguishingCharacteristic = models.CharField(max_length=1000, blank=True, null=True)
+    extensibilityOfExpression = models.CharField(max_length=1000, blank=True, null=True)
+    revisabilityOfExpression = models.CharField(max_length=1000, blank=True, null=True)
+    extentOfTheExpression = models.CharField(max_length=1000, blank=True, null=True)
+    summarizationOfContent = models.CharField(max_length=1000, blank=True, null=True)
+    contextForTheExpression = models.CharField(max_length=1000, blank=True, null=True)
+    criticalResponseToTheExpression = models.CharField(max_length=1000, blank=True, null=True)
+    useRestrictionsOnTheExpression = models.CharField(max_length=1000, blank=True, null=True)
+    sequencingPattern = models.CharField(max_length=1000, blank=True, null=True)
+    expectedRegularityOfIssue = models.CharField(max_length=1000, blank=True, null=True)
+    expectedFrequencyOfIssue = models.CharField(max_length=1000, blank=True, null=True)
+    typeOfScore = models.CharField(max_length=1000, blank=True, null=True)
+    mediumOfPerformance = models.CharField(max_length=1000, blank=True, null=True)
+    scale = models.CharField(max_length=1000, blank=True, null=True)
+    projection = models.CharField(max_length=1000, blank=True, null=True)
+    presentationTechnique = models.CharField(max_length=1000, blank=True, null=True)
+    representationOfRelief = models.CharField(max_length=1000, blank=True, null=True)
+    geodeticGridAndVerticalMeasurement = models.CharField(max_length=1000, blank=True, null=True)
+    recordingTechnique = models.CharField(max_length=1000, blank=True, null=True)
+    specialCharacteristic = models.CharField(max_length=1000, blank=True, null=True)
+    technique = models.CharField(max_length=1000, blank=True, null=True)
+
+
 #
 #
 # class Expr2Expr(models.Model):

@@ -1,47 +1,50 @@
-# # This is an auto-generated Django model module.
-# # You'll have to do the following manually to clean this up:
-# #   * Rearrange models' order
-# #   * Make sure each model has one field with primary_key=True
-# #   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
-# #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# # Feel free to rename the models, but don't rename db_table values or field names.
-#
-# from __future__ import unicode_literals
-#
-# from django.db import models
-#
-#
-# class ManifAttrib(models.Model):
-#     manif_attrib_id = models.AutoField(db_column='MANIF_ATTRIB_ID', primary_key=True)  # Field name made lowercase.
-#     manif_attrib_version = models.IntegerField(db_column='MANIF_ATTRIB_VERSION', blank=True, null=True)  # Field name made lowercase.
-#     manif_attrib_class = models.CharField(db_column='MANIF_ATTRIB_CLASS', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     attrib_list_order = models.IntegerField(db_column='ATTRIB_LIST_ORDER', blank=True, null=True)  # Field name made lowercase.
-#     text_val = models.CharField(db_column='TEXT_VAL', max_length=20480, blank=True, null=True)  # Field name made lowercase.
-#     avail_val = models.CharField(db_column='AVAIL_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     funct_val = models.CharField(db_column='FUNCT_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     juris_val = models.CharField(db_column='JURIS_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     normal_val = models.CharField(db_column='NORMAL_VAL', max_length=512, blank=True, null=True)  # Field name made lowercase.
-#     offset_val = models.IntegerField(db_column='OFFSET_VAL', blank=True, null=True)  # Field name made lowercase.
-#     quant_val = models.IntegerField(db_column='QUANT_VAL', blank=True, null=True)  # Field name made lowercase.
-#     time_val = models.CharField(db_column='TIME_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     type_val = models.CharField(db_column='TYPE_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     vocab_val = models.CharField(db_column='VOCAB_VAL', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#     manif_ent = models.ForeignKey('ManifEnt', models.DO_NOTHING, db_column='MANIF_ENT_ID', blank=True, null=True)  # Field name made lowercase.
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'MANIF_ATTRIB'
-#
-#
-# class ManifEnt(models.Model):
-#     manif_ent_id = models.AutoField(db_column='MANIF_ENT_ID', primary_key=True)  # Field name made lowercase.
-#     manif_ent_version = models.IntegerField(db_column='MANIF_ENT_VERSION', blank=True, null=True)  # Field name made lowercase.
-#     manif_ent_uri = models.CharField(db_column='MANIF_ENT_URI', max_length=512, blank=True, null=True)  # Field name made lowercase.
-#     expr_form = models.CharField(db_column='EXPR_FORM', max_length=64, blank=True, null=True)  # Field name made lowercase.
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'MANIF_ENT'
+# Django
+from django.db import models
+
+# Local Django
+
+
+class ManifEnt(models.Model):
+    identifier = models.CharField(max_length=1000, blank=True, null=True)
+    titleOfTheManifestation = models.CharField(max_length=1000, blank=True, null=True)
+    statementOfResponsibility = models.CharField(max_length=1000, blank=True, null=True)
+    editionIssueDesignation = models.CharField(max_length=1000, blank=True, null=True)
+    placeOfPublicationDistribution = models.CharField(max_length=1000, blank=True, null=True)
+    publisherDistributor = models.CharField(max_length=1000, blank=True, null=True)
+    dateOfPublicationDistribution = models.CharField(max_length=1000, blank=True, null=True)
+    fabricatorManufacturer = models.CharField(max_length=1000, blank=True, null=True)
+    seriesStatement = models.CharField(max_length=1000, blank=True, null=True)
+    formOfCarrier = models.CharField(max_length=1000, blank=True, null=True)
+    extentOfTheCarrier = models.CharField(max_length=1000, blank=True, null=True)
+    physicalMedium = models.CharField(max_length=1000, blank=True, null=True)
+    captureMode = models.CharField(max_length=1000, blank=True, null=True)
+    dimensionsOfTheCarrier = models.CharField(max_length=1000, blank=True, null=True)
+    manifestationIdentifier = models.CharField(max_length=1000, blank=True, null=True)
+    sourceForAcquisitionAccessAuthorization = models.CharField(max_length=1000, blank=True, null=True)
+    termsOfAvailability = models.CharField(max_length=1000, blank=True, null=True)
+    accessRestrictionsOnTheManifestation = models.CharField(max_length=1000, blank=True, null=True)
+    typeface = models.CharField(max_length=1000, blank=True, null=True)
+    typeSize = models.CharField(max_length=1000, blank=True, null=True)
+    foliation = models.CharField(max_length=1000, blank=True, null=True)
+    collation = models.CharField(max_length=1000, blank=True, null=True)
+    publicationStatus = models.CharField(max_length=1000, blank=True, null=True)
+    numbering = models.CharField(max_length=1000, blank=True, null=True)
+    playingSpeed = models.CharField(max_length=1000, blank=True, null=True)
+    grooveWidth = models.CharField(max_length=1000, blank=True, null=True)
+    kindOfCutting = models.CharField(max_length=1000, blank=True, null=True)
+    tapeConfiguration = models.CharField(max_length=1000, blank=True, null=True)
+    kindOfSound = models.CharField(max_length=1000, blank=True, null=True)
+    specialReproductionCharacteristic = models.CharField(max_length=1000, blank=True, null=True)
+    colour = models.CharField(max_length=1000, blank=True, null=True)
+    reductionRatio = models.CharField(max_length=1000, blank=True, null=True)
+    polarity = models.CharField(max_length=1000, blank=True, null=True)
+    generation = models.CharField(max_length=1000, blank=True, null=True)
+    presentationFormat = models.CharField(max_length=1000, blank=True, null=True)
+    systemRequirements = models.CharField(max_length=1000, blank=True, null=True)
+    fileCharacteristics = models.CharField(max_length=1000, blank=True, null=True)
+    modeOfAccess = models.CharField(max_length=1000, blank=True, null=True)
+    accessAddress = models.CharField(max_length=1000, blank=True, null=True)
+
 #
 #
 # class ManifPub(models.Model):

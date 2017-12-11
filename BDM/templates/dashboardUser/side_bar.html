@@ -28,19 +28,56 @@
             {#            </li>#}
 
             <li class="treeview">
-                <a href="#"><i class="fa fa-file"></i> <span>{% trans "Geral"%}</span>
+                <a href="#"><i class="fa fa-file"></i> <span>{% trans "Trabalho"%}</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{% url 'create_work_ent' %}">{% trans "Criar um Trabalho"%}</a></li>
-                    <li><a href="{% url 'create_expr_ent' %}">{% trans "Criar uma Expressão"%}</a></li>
-                    <li><a href="{% url 'create_manif_ent' %}">{% trans "Criar uma Manifestação"%}</a></li>
-                    <li><a href="{% url 'create_item_ent' %}">{% trans "Criar um Item"%}</a></li>
-                    <li><a href="#">{% trans "Listar Trabalhos"%}</a></li>
+                    <li><a href="{% url 'list_work_ent' %}">{% trans "Listar Trabalhos"%}</a></li>
                 </ul>
             </li>
+
+
+            <li class="treeview">
+                <a href="#"><i class="fa fa-file"></i> <span>{% trans "Expressão"%}</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{% url 'create_expr_ent' %}">{% trans "Criar uma Expressão"%}</a></li>
+                    <li><a href="{% url 'list_expr_ent' %}">{% trans "Listar Expressões"%}</a></li>
+                </ul>
+            </li>
+
+
+            <li class="treeview">
+                <a href="#"><i class="fa fa-file"></i> <span>{% trans "Manifestação"%}</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{% url 'create_manif_ent' %}">{% trans "Criar uma Manifestação"%}</a></li>
+                    <li><a href="{% url 'list_manif_ent' %}">{% trans "Listar Manifestações"%}</a></li>
+                </ul>
+            </li>
+
+
+            <li class="treeview">
+                <a href="#"><i class="fa fa-file"></i> <span>{% trans "Item"%}</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{% url 'create_item_ent' %}">{% trans "Criar um Item"%}</a></li>
+                    <li><a href={% url 'list_item_ent' %}>{% trans "Listar Itens"%}</a></li>
+                </ul>
+            </li>
+
 
             <li class="treeview">
                 <a href="pages/mailbox/mailbox.html">

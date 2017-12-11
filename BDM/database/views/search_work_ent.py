@@ -10,7 +10,7 @@ class SearchWorkEntView(ListWorkEntView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        if query:
+        if query is not None:
             if len(query) > 0:
                 return self.model.objects.filter(titleOfTheWork__icontains=query)
             else:

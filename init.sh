@@ -27,8 +27,8 @@ python3 BDM/manage.py makemigrations
 python3 BDM/manage.py migrate
 echo "Load all datas"
 python3 BDM/manage.py loaddata dataFinal.json
-echo "Collecting static"
-python3 BDM/manage.py collectstatic
+#echo "Collecting static"
+#python3 BDM/manage.py collectstatic
 echo "Run server"
 python3 BDM/manage.py runserver 0.0.0.0:8000 & .
 ./node_modules/.bin/gulp default

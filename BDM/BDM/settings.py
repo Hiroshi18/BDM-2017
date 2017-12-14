@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'user',
     'landing',
     'exam',
-    'chat',
     'recommendation',
 ]
 

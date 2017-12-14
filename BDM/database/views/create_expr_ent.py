@@ -10,7 +10,36 @@ class CreateExprEntView(CreateView):
     template_name = 'create_expr_ent.html'
     sucesss_url = 'create_expr_ent.html'
     model = ExprEnt
-    fields = '__all__'
+    fields = (    
+                'identifier',
+                'titleOfTheExpression',
+                'formOfExpression',
+                'dateOfExpression',
+                'languageOfExpression',
+                'otherDistinguishingCharacteristic',
+                'extensibilityOfExpression',
+                'revisabilityOfExpression',
+                'extentOfTheExpression',
+                'summarizationOfContent',
+                'contextForTheExpression',
+                'criticalResponseToTheExpression',
+                'useRestrictionsOnTheExpression',
+                'sequencingPattern',
+                'expectedRegularityOfIssue',
+                'expectedFrequencyOfIssue',
+                'typeOfScore',
+                'mediumOfPerformance',
+                'scale',
+                'projection',
+                'presentationTechnique',
+                'representationOfRelief',
+                'geodeticGridAndVerticalMeasurement',
+                'recordingTechnique',
+                'specialCharacteristic',
+                'technique',
+                'relatedWorkEnt'
+            )
+    
 
     def get_success_url(self):
         return reverse('create_expr_ent')

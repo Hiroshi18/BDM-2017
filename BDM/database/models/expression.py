@@ -39,8 +39,9 @@ class ExprEnt(models.Model):
 
     relatedManifList = models.ManyToManyField(
         'ManifEnt',
-        blank=True
+        related_name='relatedManifList'
     )
+
     def __unicode__(self):
         return '%s' % self.titleOfTheExpression
 

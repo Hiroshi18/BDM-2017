@@ -27,9 +27,8 @@ class WorkEnt(models.Model):
 
     relatedExprList = models.ManyToManyField(
         'ExprEnt',
-        blank=True
+        related_name='relatedExprList'
     )
-
 
     def __unicode__(self):
         return '%s' % self.titleOfTheWork

@@ -25,7 +25,6 @@ urlpatterns = [
     url(r'^$', home, name='landing_page'),
     url(r'^team/', team_page, name='team_page'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^chat/', include('chat.urls')),
     url(r'^recommendation/', include('recommendation.urls')),
     url(r'^database/', include('database.urls')),
     url(r'^%s(?P<path>.*)$' % settings.MEDIA_URL[1:], protected_serve, {'document_root': settings.MEDIA_ROOT}),
@@ -40,7 +39,6 @@ urlpatterns += i18n_patterns(
     url(r'^$', home, name='landing_page'),
     url(r'^team/', team_page, name='team_page'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^chat/', include('chat.urls')),
     url(r'^recommendation/', include('recommendation.urls')),
     url(r'^database/', include('database.urls')),
 )

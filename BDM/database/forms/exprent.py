@@ -1,7 +1,7 @@
-# django
+# Django
 from django import forms
 
-# local django
+# Local Django
 from database.models import WorkEnt
 
 
@@ -32,3 +32,4 @@ class CreateExprEntForm(forms.Form):
     recordingTechnique = forms.CharField(max_length=1000, blank=True, null=True)
     specialCharacteristic = forms.CharField(max_length=1000, blank=True, null=True)
     technique = forms.CharField(max_length=1000, blank=True, null=True)
+    relatedWorkEnt = forms.ModelMultipleChoiceField(WorkEnt.objects.all())

@@ -1,8 +1,8 @@
-# django
+# Django
 from django import forms
 
-# local django
-from database.models import WorkEnt
+# Local Django
+from database.models import ExprEnt
 
 
 class CreateManifEntForm(forms.Form):
@@ -45,3 +45,4 @@ class CreateManifEntForm(forms.Form):
     fileCharacteristics = forms.CharField(max_length=1000, blank=True, null=True)
     modeOfAccess = forms.CharField(max_length=1000, blank=True, null=True)
     accessAddress = forms.CharField(max_length=1000, blank=True, null=True)
+    relatedExprEnt = forms.ModelMultipleChoiceField(ExprEnt.objects.all())

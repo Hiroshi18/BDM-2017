@@ -52,7 +52,8 @@ class ManifEnt(models.Model):
 
     relatedItemList = models.ManyToManyField(
         'ItemEnt',
-        related_name='relatedItemList'
+        related_name='relatedItemList',
+        blank=True,
     )
 
     def __unicode__(self):

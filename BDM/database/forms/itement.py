@@ -1,8 +1,8 @@
-# django
+# Django
 from django import forms
 
-# local django
-from database.models import WorkEnt
+# Local Django
+from database.models import ManifEnt
 
 
 class CreateItemEntForm(forms.Form):
@@ -19,3 +19,4 @@ class CreateItemEntForm(forms.Form):
     locationOfItem = forms.CharField(max_length=1000, blank=True, null=True)
     custodialHistoryOfItem = forms.CharField(max_length=1000, blank=True, null=True)
     immediateSourceOfAcquisitionOfItem = forms.CharField(max_length=1000, blank=True, null=True)
+    relatedManifEnt = forms.ModelMultipleChoiceField(ManifEnt.objects.all())

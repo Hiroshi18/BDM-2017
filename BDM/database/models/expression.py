@@ -39,7 +39,8 @@ class ExprEnt(models.Model):
 
     relatedManifList = models.ManyToManyField(
         'ManifEnt',
-        related_name='relatedManifList'
+        related_name='relatedManifList',
+        blank=True,
     )
 
     def __unicode__(self):
@@ -47,64 +48,3 @@ class ExprEnt(models.Model):
 
     def __str__(self):
         return '%s' % self.titleOfTheExpression
-
-
-# class Expr2Expr(models.Model):
-#     expr2expr_id = models.AutoField(db_column='EXPR2EXPR_ID', primary_key=True)  # Field name made lowercase.
-#     expr2expr_version = models.IntegerField(db_column='EXPR2EXPR_VERSION', blank=True, null=True)  # Field name made lowercase.
-#     rel_type = models.CharField(db_column='REL_TYPE', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_role = models.CharField(db_column='REL_ROLE', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_category = models.CharField(db_column='REL_CATEGORY', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_list_order = models.IntegerField(db_column='REL_LIST_ORDER', blank=True, null=True)  # Field name made lowercase.
-#     source_expr = models.ForeignKey('ExprEnt', models.DO_NOTHING, db_column='SOURCE_EXPR_ID')  # Field name made lowercase.
-#     target_expr = models.ForeignKey('ExprEnt', models.DO_NOTHING, db_column='TARGET_EXPR_ID')  # Field name made lowercase.
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'EXPR2EXPR'
-#
-#
-# class Expr2Manif(models.Model):
-#     expr2manif_id = models.AutoField(db_column='EXPR2MANIF_ID', primary_key=True)  # Field name made lowercase.
-#     expr2manif_version = models.IntegerField(db_column='EXPR2MANIF_VERSION', blank=True, null=True)  # Field name made lowercase.
-#     rel_type = models.CharField(db_column='REL_TYPE', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_role = models.CharField(db_column='REL_ROLE', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_category = models.CharField(db_column='REL_CATEGORY', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_list_order = models.IntegerField(db_column='REL_LIST_ORDER', blank=True, null=True)  # Field name made lowercase.
-#     source_expr = models.ForeignKey('ExprEnt', models.DO_NOTHING, db_column='SOURCE_EXPR_ID')  # Field name made lowercase.
-#     target_manif = models.ForeignKey('ManifEnt', models.DO_NOTHING, db_column='TARGET_MANIF_ID')  # Field name made lowercase.
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'EXPR2MANIF'
-#
-#
-# class Expr2Respon(models.Model):
-#     expr2respon_id = models.AutoField(db_column='EXPR2RESPON_ID', primary_key=True)  # Field name made lowercase.
-#     expr2respon_version = models.IntegerField(db_column='EXPR2RESPON_VERSION', blank=True, null=True)  # Field name made lowercase.
-#     rel_class = models.CharField(db_column='REL_CLASS', max_length=256, blank=True, null=True)  # Field name made lowercase.
-#     rel_type = models.CharField(db_column='REL_TYPE', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_role = models.CharField(db_column='REL_ROLE', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_category = models.CharField(db_column='REL_CATEGORY', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_list_order = models.IntegerField(db_column='REL_LIST_ORDER', blank=True, null=True)  # Field name made lowercase.
-#     source_expr = models.ForeignKey('ExprEnt', models.DO_NOTHING, db_column='SOURCE_EXPR_ID')  # Field name made lowercase.
-#     target_respon = models.ForeignKey('ResponEnt', models.DO_NOTHING, db_column='TARGET_RESPON_ID')  # Field name made lowercase.
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'EXPR2RESPON'
-#
-#
-# class Expr2Work(models.Model):
-#     expr2work_id = models.AutoField(db_column='EXPR2WORK_ID', primary_key=True)  # Field name made lowercase.
-#     expr2work_version = models.IntegerField(db_column='EXPR2WORK_VERSION', blank=True, null=True)  # Field name made lowercase.
-#     rel_type = models.CharField(db_column='REL_TYPE', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_role = models.CharField(db_column='REL_ROLE', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_category = models.CharField(db_column='REL_CATEGORY', max_length=32, blank=True, null=True)  # Field name made lowercase.
-#     rel_list_order = models.IntegerField(db_column='REL_LIST_ORDER', blank=True, null=True)  # Field name made lowercase.
-#     source_expr = models.ForeignKey('ExprEnt', models.DO_NOTHING, db_column='SOURCE_EXPR_ID')  # Field name made lowercase.
-#     target_work = models.ForeignKey('WorkEnt', models.DO_NOTHING, db_column='TARGET_WORK_ID')  # Field name made lowercase.
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'EXPR2WORK'

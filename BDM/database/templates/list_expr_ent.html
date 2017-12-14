@@ -14,6 +14,7 @@
                 <th>{% trans "Título" %}</th>
                 <th>{% trans "Data" %}</th>
                 <th>{% trans "Forma da expressão" %}</th>
+                <th>{% trans "Trabalho Relacionado" %}</th>
                 </thead>
             {% endif %}
 
@@ -24,6 +25,7 @@
                     <td>{{ expr.titleOfTheExpression }}</td>
                     <td>{{ expr.dateOfExpression }}</td>
                     <td>{{ expr.formOfExpression }}</td>
+                    <td>{{ expr.relatedWorkEnt }}</td>
                 </tr>
 
                 {% empty %}

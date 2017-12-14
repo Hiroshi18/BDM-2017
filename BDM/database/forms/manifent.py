@@ -3,6 +3,7 @@ from django import forms
 
 # Local Django
 from database.models import ExprEnt, ManifEnt
+from BDM import settings
 
 
 class CreateManifEntForm(forms.ModelForm):
@@ -16,7 +17,7 @@ class CreateManifEntForm(forms.ModelForm):
     editionIssueDesignation = forms.CharField(max_length=1000, required=False, )
     placeOfPublicationDistribution = forms.CharField(max_length=1000, required=False, )
     publisherDistributor = forms.CharField(max_length=1000, required=False, )
-    dateOfPublicationDistribution = forms.CharField(max_length=1000, required=True, )
+    dateOfPublicationDistribution = forms.DateField(input_formats=settings.DATE_INPUT_FORMATS)
     fabricatorManufacturer = forms.CharField(max_length=1000, required=False, )
     seriesStatement = forms.CharField(max_length=1000, required=False, )
     formOfCarrier = forms.CharField(max_length=1000, required=False, )

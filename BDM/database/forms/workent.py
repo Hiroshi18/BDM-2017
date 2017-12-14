@@ -1,8 +1,9 @@
-# django
+# Django
 from django import forms
 
-# local django
+# Local Django
 from database.models import WorkEnt
+from BDM import settings
 
 
 class CreateWorkEntForm(forms.ModelForm):
@@ -13,7 +14,7 @@ class CreateWorkEntForm(forms.ModelForm):
     identifier = forms.CharField(max_length=1000, required=False, )
     titleOfTheWork = forms.CharField(max_length=1000, required=False, )
     formOfWork = forms.CharField(max_length=1000, required=False, )
-    dateOfTheWork = forms.CharField(max_length=1000, required=True,)
+    dateOfTheWork = forms.DateField(input_formats=settings.DATE_INPUT_FORMATS)
     otherDistinguishingCharacteristic = forms.CharField(max_length=1000, required=False, )
     intendedTermination = forms.CharField(max_length=1000, required=False, )
     intendedAudience = forms.CharField(max_length=1000, required=False, )

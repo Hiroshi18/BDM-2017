@@ -36,7 +36,7 @@ class CreateItemEntView(CreateView):
         item.identifier = identifier
         item.itemIdentifier = itemIdentifier
         item.fingerprint = fingerprint
-        item.provenprovenanceOfTheItem = provenanceOfTheItem
+        item.provenanceOfTheItem = provenanceOfTheItem
         item.marksInscriptions = marksInscriptions
         item.exhibitionHistory = exhibitionHistory
         item.conditionOfTheItem = conditionOfTheItem
@@ -45,7 +45,7 @@ class CreateItemEntView(CreateView):
         item.accessRestrictionsOnTheItem = accessRestrictionsOnTheItem
         item.locationOfItem = locationOfItem
         item.custodialHistoryOfItem = custodialHistoryOfItem
-        item.mmediateSourceOfAcquisitionOfItem = immediateSourceOfAcquisitionOfItem
+        item.immediateSourceOfAcquisitionOfItem = immediateSourceOfAcquisitionOfItem
         item.relatedManifEnt = relatedManifEnt
         item.save()
 

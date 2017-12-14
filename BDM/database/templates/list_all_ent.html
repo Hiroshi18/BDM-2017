@@ -22,7 +22,7 @@
                 </thead>
 
                 <thead>
-                <th>{% trans "Titulo" %}</th>
+                <th>{% trans "Titulo do Trabalho" %}</th>
                 <th>{% trans "Data" %}</th>
                 <th>{% trans "Audiência" %}</th>
                 </thead>
@@ -36,7 +36,7 @@
                 </thead>
 
                 <thead>
-                <th>{% trans "Título" %}</th>
+                <th>{% trans "Título da Expressão" %}</th>
                 <th>{% trans "Data" %}</th>
                 <th>{% trans "Forma da expressão" %}</th>
                 </thead>
@@ -48,14 +48,14 @@
                     </tr>
 
                     <th>{% trans "Manifestações relacionada a Expressão" %}</th>
-                    </thead>
 
-                    <thead>
-                    <th>{% trans "Titulo" %}</th>
-                    <th>{% trans "Data" %}</th>
-                    <th>{% trans "Local de Origem da publicadora" %}</th>
-                    </thead>
+
                     {% for manif in expr.relatedManifList.all %}
+                        <thead>
+                        <th>{% trans "Titulo da Manifestação" %}</th>
+                        <th>{% trans "Data" %}</th>
+                        <th>{% trans "Local de Origem da publicadora" %}</th>
+                        </thead>
                         <tr class='clickable-row'>
                             <td>{{ manif.titleOfTheManifestation }}</td>
                             <td>{{ manif.dateOfPublicationDistribution }}</td>

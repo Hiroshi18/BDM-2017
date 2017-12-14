@@ -3,7 +3,7 @@ from django import forms
 
 # Local Django
 from database.models import WorkEnt, ExprEnt
-from BDM import settings
+from database.forms import FormattedDateField
 
 
 class CreateExprEntForm(forms.ModelForm):
@@ -14,7 +14,7 @@ class CreateExprEntForm(forms.ModelForm):
     identifier = forms.CharField(max_length=1000, required=False, )
     titleOfTheExpression = forms.CharField(max_length=1000, required=False, )
     formOfExpression = forms.CharField(max_length=1000, required=False, )
-    dateOfExpression = forms.DateField(input_formats=settings.DATE_INPUT_FORMATS)
+    dateOfExpression = FormattedDateField(widget=forms.DateInput(attrs={'placeholder': '*Ex: dd/mm/aaaa'}))
     languageOfExpression = forms.CharField(max_length=1000, required=False, )
     otherDistinguishingCharacteristic = forms.CharField(max_length=1000, required=False, )
     extensibilityOfExpression = forms.CharField(max_length=1000, required=False, )

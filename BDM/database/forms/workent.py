@@ -3,7 +3,7 @@ from django import forms
 
 # Local Django
 from database.models import WorkEnt
-from BDM import settings
+from database.forms import FormattedDateField
 
 
 class CreateWorkEntForm(forms.ModelForm):
@@ -14,7 +14,7 @@ class CreateWorkEntForm(forms.ModelForm):
     identifier = forms.CharField(max_length=1000, required=False, )
     titleOfTheWork = forms.CharField(max_length=1000, required=False, )
     formOfWork = forms.CharField(max_length=1000, required=False, )
-    dateOfTheWork = forms.DateField(input_formats=settings.DATE_INPUT_FORMATS)
+    dateOfTheWork = FormattedDateField(widget=forms.DateInput(attrs={'placeholder': '*Ex: dd/mm/aaaa'}))
     otherDistinguishingCharacteristic = forms.CharField(max_length=1000, required=False, )
     intendedTermination = forms.CharField(max_length=1000, required=False, )
     intendedAudience = forms.CharField(max_length=1000, required=False, )

@@ -37,6 +37,10 @@ class ExprEnt(models.Model):
     technique = models.CharField(max_length=1000, blank=True, null=True)
     relatedWorkEnt = models.ForeignKey(WorkEnt, related_name="relatedWorkEnt")
 
+    relatedManifList = models.ManyToManyField(
+        'ManifEnt',
+        blank=True
+    )
     def __unicode__(self):
         return '%s' % self.titleOfTheExpression
 

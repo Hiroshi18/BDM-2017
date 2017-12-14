@@ -1,134 +1,137 @@
 {% extends "dashboardUser/template.html" %} {% block content %} {% load staticfiles %} {% load static %} {% load i18n %}
 
-    Em breve
-{#    <div class="panel-body">#}
-{#        <!-- tab component -->#}
-{#        <table class="table table-striped table-bordered table-hover">#}
-{#            {% if list_all_ent %}#}
-{#                <thead>#}
-{#                <th>{% trans "Titulo" %}</th>#}
-{#                <th>{% trans "Data" %}</th>#}
-{#                <th>{% trans "Audiência" %}</th>#}
-{#                <th>{% trans "Local de Origem" %}</th>#}
-{#                </thead>#}
-{#            {% endif %}#}
-{##}
-{#            <tbody>#}
-{##}
-{#            {% for work in list_all_ent %}#}
-{#                <tr class='clickable-row'>#}
-{#                    <td>{{ work.titleOfTheWork }}</td>#}
-{#                    <td>{{ work.dateOfTheWork }}</td>#}
-{#                    <td>{{ work.intendedAudience }}</td>#}
-{#                    <td>{{ work.placeOfOriginOfTheWork }}</td>#}
-{#                    <td>{{ work.relatedExprList.all }}</td>#}
-{#                    <span class="badge">{{ work.relatedExprList.count }}</span>#}
-{#                </tr>#}
-{#                <thead>#}
-{#                <th>{% trans "Expressões relacionada ao Trabalho" %}</th>#}
-{#                </thead>#}
-{##}
-{#                <thead>#}
-{#                <th>{% trans "Título" %}</th>#}
-{#                <th>{% trans "Data" %}</th>#}
-{#                <th>{% trans "Forma da expressão" %}</th>#}
-{#                </thead>#}
-{#                {% for expr in work.relatedExprList.all %}#}
-{#                    <tr class='clickable-row'>#}
-{#                        <td>{{ expr.titleOfTheExpression }}</td>#}
-{#                        <td>{{ expr.dateOfExpression }}</td>#}
-{#                        <td>{{ expr.formOfExpression }}</td>#}
-{#                    </tr>#}
-{##}
-{#                    <th>{% trans "Manifestações relacionada a Expressão" %}</th>#}
-{#                    </thead>#}
-{##}
-{#                    <thead>#}
-{#                    <th>{% trans "Titulo" %}</th>#}
-{#                    <th>{% trans "Data" %}</th>#}
-{#                    <th>{% trans "Local de Origem da publicadora" %}</th>#}
-{#                    <th>{% trans "Expressão Relacionada" %}</th>#}
-{#                    </thead>#}
-{#                    {% for manif in expr.relatedManifList.all %}#}
-{#                        <tr class='clickable-row'>#}
-{#                            <td>{{ manif.titleOfTheManifestation }}</td>#}
-{#                            <td>{{ manif.dateOfPublicationDistribution }}</td>#}
-{#                            <td>{{ manif.placeOfPublicationDistribution }}</td>#}
-{#                            <td>{{ manif.relatedExprEnt }}</td>#}
-{#                        </tr>#}
-{##}
-{#                        {% empty %}#}
-{##}
-{#                        {% trans "Não existem manifestações para a expressão." %}#}
-{##}
-{#                        <th>{% trans "Itens relacionados a Manifestação" %}</th>#}
-{#                        </thead>#}
-{#                        <thead>#}
-{#                        <th>{% trans "Identificador do item" %}</th>#}
-{#                        <th>{% trans "Proveniencia" %}</th>#}
-{#                        <th>{% trans "Localização do item" %}</th>#}
-{#                        <th>{% trans "Manifestação Relacionada" %}</th>#}
-{#                        </thead>#}
-{##}
-{#                        <tbody>#}
-{##}
-{#                        {% for item in manif.relatedItemList.all %}#}
-{#                            <tr class='clickable-row'>#}
-{#                                <td>{{ item.itemIdentifier }}</td>#}
-{#                                <td>{{ item.provenanceOfTheItem }}</td>#}
-{#                                <td>{{ item.locationOfItem }}</td>#}
-{#                                <td>{{ item.relatedManifEnt }}</td>#}
-{#                            </tr>#}
-{##}
-{#                            {% empty %}#}
-{##}
-{#                            {% trans "Não existem itens cadastrados." %}#}
-{##}
-{#                        {% endfor %}%}#}
-{##}
-{#                    {% endfor %}#}
-{##}
-{##}
-{#                    {% empty %}#}
-{##}
-{#                    <td> {% trans "Não existem expressões para este trabalho." %}</td>#}
-{##}
-{#                {% endfor %}#}
-{##}
-{##}
-{#                {% empty %}#}
-{##}
-{#                {% trans "Não existem cadastros." %}#}
-{##}
-{#            {% endfor %}#}
-{#            </tbody>#}
-{#        </table>#}
-{##}
-{#        {% comment "Source" %}#}
-{#            <p>Retirado de: https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html</p>#}
-{#        {% endcomment %}#}
-{##}
-{#        {% if is_paginated %}#}
-{#            <ul class="pagination">#}
-{#                {% if page_obj.has_previous %}#}
-{#                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>#}
-{#                {% else %}#}
-{#                    <li class="disabled"><span>&laquo;</span></li>#}
-{#                {% endif %}#}
-{#                {% for i in paginator.page_range %}#}
-{#                    {% if page_obj.number == i %}#}
-{#                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>#}
-{#                    {% else %}#}
-{#                        <li><a href="?page={{ i }}">{{ i }}</a></li>#}
-{#                    {% endif %}#}
-{#                {% endfor %}#}
-{#                {% if page_obj.has_next %}#}
-{#                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>#}
-{#                {% else %}#}
-{#                    <li class="disabled"><span>&raquo;</span></li>#}
-{#                {% endif %}#}
-{#            </ul>#}
-{#        {% endif %}#}
-{#    </div>#}
+    <div class="panel-body">
+        <!-- tab component -->
+        <table class="table table-striped table-bordered table-hover">
+
+
+
+            <tbody>
+
+            {% for work in list_all_ent %}
+
+                <thead>
+                <th>{% trans "------------------------------------------------------------------------" %}</th>
+                <th>{% trans "------------------------------------------------------------------------" %}</th>
+                <th>{% trans "------------------------------------------------------------------------" %}</th>
+
+                </thead>
+
+                <thead>
+                <th>{% trans "Trabalho" %}</th>
+                </thead>
+
+                <thead>
+                <th>{% trans "Titulo" %}</th>
+                <th>{% trans "Data" %}</th>
+                <th>{% trans "Audiência" %}</th>
+                </thead>
+                <tr class='clickable-row'>
+                    <td>{{ work.titleOfTheWork }}</td>
+                    <td>{{ work.dateOfTheWork }}</td>
+                    <td>{{ work.intendedAudience }}</td>
+                </tr>
+                <thead>
+                <th>{% trans "Expressões relacionada ao Trabalho" %}</th>
+                </thead>
+
+                <thead>
+                <th>{% trans "Título" %}</th>
+                <th>{% trans "Data" %}</th>
+                <th>{% trans "Forma da expressão" %}</th>
+                </thead>
+                {% for expr in work.relatedExprList.all %}
+                    <tr class='clickable-row'>
+                        <td>{{ expr.titleOfTheExpression }}</td>
+                        <td>{{ expr.dateOfExpression }}</td>
+                        <td>{{ expr.formOfExpression }}</td>
+                    </tr>
+
+                    <th>{% trans "Manifestações relacionada a Expressão" %}</th>
+                    </thead>
+
+                    <thead>
+                    <th>{% trans "Titulo" %}</th>
+                    <th>{% trans "Data" %}</th>
+                    <th>{% trans "Local de Origem da publicadora" %}</th>
+                    </thead>
+                    {% for manif in expr.relatedManifList.all %}
+                        <tr class='clickable-row'>
+                            <td>{{ manif.titleOfTheManifestation }}</td>
+                            <td>{{ manif.dateOfPublicationDistribution }}</td>
+                            <td>{{ manif.placeOfPublicationDistribution }}</td>
+                        </tr>
+
+                        <th>{% trans "Itens relacionados a Manifestação" %}</th>
+
+                        <thead>
+                        <th>{% trans "Identificador do item" %}</th>
+                        <th>{% trans "Proveniencia" %}</th>
+                        <th>{% trans "Localização do item" %}</th>
+                        </thead>
+
+                        <tbody>
+
+                        {% for item in manif.relatedItemList.all %}
+                            <tr class='clickable-row'>
+                                <td>{{ item.itemIdentifier }}</td>
+                                <td>{{ item.provenanceOfTheItem }}</td>
+                                <td>{{ item.locationOfItem }}</td>
+                            </tr>
+
+                            {% empty %}
+
+                            <td>{% trans "Não existem itens cadastrados." %}</td>
+
+                        {% endfor %}
+
+
+                        {% empty %}
+
+                        <td>{% trans "Não existem manifestações para a expressão." %}</td>
+
+                    {% endfor %}
+
+
+                    {% empty %}
+
+                    <td> {% trans "Não existem expressões para este trabalho." %}</td>
+
+                {% endfor %}
+
+
+                {% empty %}
+
+                {% trans "Não existem cadastros." %}
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% comment "Source" %}
+            <p>Retirado de: https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html</p>
+        {% endcomment %}
+
+        {% if is_paginated %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </div>
 
 {%endblock %}

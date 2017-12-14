@@ -11,7 +11,7 @@
         <table class="table table-striped table-bordered table-hover">
             {% if list_item_ent %}
                 <thead>
-                <th>{% trans "Identificador" %}</th>
+                <th>{% trans "Identificador do item" %}</th>
                 <th>{% trans "Proveniencia" %}</th>
                 <th>{% trans "Localização do item" %}</th>
                 </thead>
@@ -21,7 +21,7 @@
 
             {% for item in list_item_ent %}
                 <tr class='clickable-row'>
-                    <td>{{ item.identifier }}</td>
+                    <td>{{ item.itemIdentifier }}</td>
                     <td>{{ item.provenanceOfTheItem }}</td>
                     <td>{{ item.locationOfItem }}</td>
                 </tr>

@@ -5,6 +5,7 @@ from datetime import date
 from django.db import models
 
 # Local Django
+from database.models import ManifEnt
 
 
 class ItemEnt(models.Model):
@@ -21,6 +22,13 @@ class ItemEnt(models.Model):
     locationOfItem = models.CharField(max_length=1000, blank=True, null=True)
     custodialHistoryOfItem = models.CharField(max_length=1000, blank=True, null=True)
     immediateSourceOfAcquisitionOfItem = models.CharField(max_length=1000, blank=True, null=True)
+    relatedManifEnt = models.ForeignKey(ManifEnt, related_name="relatedManifEnt")
+
+    def __unicode__(self):
+        return '%s' % self.itemIdentifier
+
+    def __str__(self):
+        return '%s' % self.itemIdentifier
 
 # class Item2Item(models.Model):
 #     item2item_id = models.AutoField(db_column='ITEM2ITEM_ID', primary_key=True)  # Field name made lowercase.

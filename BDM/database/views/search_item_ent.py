@@ -10,6 +10,6 @@ class SearchItemEntView(ListItemEntView):
         query = self.request.GET.get('q')
         if query is not None:
             if len(query) > 0:
-                return self.model.objects.filter(identifier__icontains=query)
+                return self.model.objects.filter(itemIdentifier__icontains=query)
             else:
                 return self.model.objects.filter()

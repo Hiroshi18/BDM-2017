@@ -5,6 +5,7 @@ from datetime import date
 from django.db import models
 
 # Local Django
+from database.models import ExprEnt
 
 
 class ManifEnt(models.Model):
@@ -47,9 +48,14 @@ class ManifEnt(models.Model):
     fileCharacteristics = models.CharField(max_length=1000, blank=True, null=True)
     modeOfAccess = models.CharField(max_length=1000, blank=True, null=True)
     accessAddress = models.CharField(max_length=1000, blank=True, null=True)
+    relatedExprEnt = models.ForeignKey(ExprEnt, related_name="relatedExprEnt")
 
-#
-#
+    def __unicode__(self):
+        return '%s' % self.titleOfTheManifestation
+
+    def __str__(self):
+        return '%s' % self.titleOfTheManifestation
+
 # class ManifPub(models.Model):
 #     manif_pub_id = models.AutoField(db_column='MANIF_PUB_ID', primary_key=True)  # Field name made lowercase.
 #     manif_ent_id = models.IntegerField(db_column='MANIF_ENT_ID')  # Field name made lowercase.

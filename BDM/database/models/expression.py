@@ -5,6 +5,7 @@ from datetime import date
 from django.db import models
 
 # Local Django
+from database.models import WorkEnt
 
 
 class ExprEnt(models.Model):
@@ -34,10 +35,15 @@ class ExprEnt(models.Model):
     recordingTechnique = models.CharField(max_length=1000, blank=True, null=True)
     specialCharacteristic = models.CharField(max_length=1000, blank=True, null=True)
     technique = models.CharField(max_length=1000, blank=True, null=True)
+    relatedWorkEnt = models.ForeignKey(WorkEnt, related_name="relatedWorkEnt")
+
+    def __unicode__(self):
+        return '%s' % self.titleOfTheExpression
+
+    def __str__(self):
+        return '%s' % self.titleOfTheExpression
 
 
-#
-#
 # class Expr2Expr(models.Model):
 #     expr2expr_id = models.AutoField(db_column='EXPR2EXPR_ID', primary_key=True)  # Field name made lowercase.
 #     expr2expr_version = models.IntegerField(db_column='EXPR2EXPR_VERSION', blank=True, null=True)  # Field name made lowercase.

@@ -25,7 +25,11 @@ class WorkEnt(models.Model):
     placeOfOriginOfTheWork = models.CharField(max_length=1000, blank=True, null=True)
     history = models.CharField(max_length=1000, blank=True, null=True)
 
+    def __unicode__(self):
+        return '%s' % self.titleOfTheWork
 
+    def __str__(self):
+        return '%s' % self.titleOfTheWork
 
 # class Work2Expr(models.Model):
 #     work2expr_id = models.AutoField(db_column='WORK2EXPR_ID', primary_key=True)  # Field name made lowercase.

@@ -9,10 +9,12 @@ from database.models import WorkEnt
 
 
 class ExprEnt(models.Model):
-    identifier = models.CharField(max_length=1000, blank=True, null=True)
-    titleOfTheExpression = models.CharField(max_length=1000, blank=True, null=True)
-    formOfExpression = models.CharField(max_length=1000, blank=True, null=True)
+    identifier = models.CharField(max_length=1000, blank=False, null=True)
+    titleOfTheExpression = models.CharField(max_length=1000, blank=False, null=True)
+    formOfExpression = models.CharField(max_length=1000, blank=False, null=True)
     dateOfExpression = models.DateField(blank=False, default=date.today)
+    relatedWorkEnt = models.ForeignKey(WorkEnt, related_name="relatedWorkEnt")
+
     languageOfExpression = models.CharField(max_length=1000, blank=True, null=True)
     otherDistinguishingCharacteristic = models.CharField(max_length=1000, blank=True, null=True)
     extensibilityOfExpression = models.CharField(max_length=1000, blank=True, null=True)
@@ -35,7 +37,6 @@ class ExprEnt(models.Model):
     recordingTechnique = models.CharField(max_length=1000, blank=True, null=True)
     specialCharacteristic = models.CharField(max_length=1000, blank=True, null=True)
     technique = models.CharField(max_length=1000, blank=True, null=True)
-    relatedWorkEnt = models.ForeignKey(WorkEnt, related_name="relatedWorkEnt")
 
     relatedManifList = models.ManyToManyField(
         'ManifEnt',

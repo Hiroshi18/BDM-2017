@@ -4,7 +4,104 @@
 <form action='' method="POST">
   <div class="form-group">
     {% csrf_token %}
-    {{ form.as_p }}
+<div class="col-sm-12">
+      <font size="6">
+        <span class="label label-primary">{% trans "Obrigatório" %}</span>
+      </font>
+</div>
+    <div class="col-sm-12">
+    <font size="4">
+    <span class="label label-primary">{% trans "Identificador" %}</span>
+    </font>
+        {{ form.identifier  }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Identificador do item" %}</span>
+      </font>
+            {{ form.itemIdentifier  }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Provenienciado item" %}</span>
+      </font>
+            {{ form.provenanceOfTheItem  }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Localização do item" %}</span>
+      </font>
+            {{ form.locationOfItem  }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Manifestação Relacionada" %}</span>
+      </font>
+            {{ form.relatedManifEnt  }}
+    </div>
+
+      <div class="col-sm-12">
+      <font size="6">
+        <span class="label label-primary">{% trans "Optativo" %}</span>
+      </font>
+</div>
+
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Fingerprint" %}</span>
+      </font>
+            {{ form.fingerprint  }}
+    </div>
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Lingua da Expressão" %}</span>#}
+{#      </font>#}
+{#            {{ form.marksInscriptions  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Lingua da Expressão" %}</span>#}
+{#      </font>#}
+{#            {{ form.exhibitionHistory  }}#}
+{#    </div>#}
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Condição do item" %}</span>
+      </font>
+            {{ form.conditionOfTheItem  }}
+    </div>
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Lingua da Expressão" %}</span>#}
+{#      </font>#}
+{#            {{ form.treatmentHistory  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Lingua da Expressão" %}</span>#}
+{#      </font>#}
+{#            {{ form.scheduledTreatment  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Lingua da Expressão" %}</span>#}
+{#      </font>#}
+{#            {{ form.accessRestrictionsOnTheItem  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Lingua da Expressão" %}</span>#}
+{#      </font>#}
+{#            {{ form.custodialHistoryOfItem  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Lingua da Expressão" %}</span>#}
+{#      </font>#}
+{#            {{ form.immediateSourceOfAcquisitionOfItem  }}#}
+{#    </div>#}
+
+
     <br><br>
     <div class="col-sm-2 col-sm-push-5">
       <br>

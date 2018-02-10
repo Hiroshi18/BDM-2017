@@ -4,7 +4,208 @@
 <form action='' method="POST">
   <div class="form-group">
     {% csrf_token %}
-    {{ form.as_p }}
+<div class="col-sm-12">
+      <font size="6">
+        <span class="label label-primary">{% trans "Obrigatório" %}</span>
+      </font>
+</div>
+
+    <div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Identificador" %}</span>
+      </font>
+      {{ form.identifier }}
+    </div>
+
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Titulo da expressão" %}</span>
+      </font>
+            {{ form.titleOfTheExpression }}
+    </div>
+
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Forma de Expressão" %}</span>
+      </font>
+            {{ form.formOfExpression }}
+    </div>
+
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Data da expressão" %}</span>
+      </font>
+            {{ form.dateOfExpression }}
+    </div>
+
+      <div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Trabalho Relacionado" %}</span>
+      </font>
+            {{ form.relatedWorkEnt }}
+    </div>
+
+      <div class="col-sm-12">
+      <font size="6">
+        <span class="label label-primary">{% trans "Optativo" %}</span>
+      </font>
+</div>
+
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Lingua da Expressão" %}</span>
+      </font>
+            {{ form.languageOfExpression }}
+    </div>
+
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Outras caracteristicas" %}</span>
+      </font>
+            {{ form.otherDistinguishingCharacteristic }}
+    </div>
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "" %}</span>#}
+{#      </font>#}
+{#            {{ form.extensibilityOfExpression }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.revisabilityOfExpression }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.extentOfTheExpression }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.summarizationOfContent }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.contextForTheExpression }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.criticalResponseToTheExpression }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.useRestrictionsOnTheExpression }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.sequencingPattern }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.expectedRegularityOfIssue }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.expectedFrequencyOfIssue }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.typeOfScore }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.mediumOfPerformance }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.scale }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.projection }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.presentationTechnique }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.representationOfRelief }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.geodeticGridAndVerticalMeasurement }}#}
+{#    </div>#}
+{##}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador" %}</span>#}
+{#      </font>#}
+{#            {{ form.recordingTechnique }}#}
+{#    </div>#}
+
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Caracteristica especial" %}</span>
+      </font>
+            {{ form.specialCharacteristic }}
+    </div>
+
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Tecnica" %}</span>
+      </font>
+            {{ form.technique }}
+    </div>
+
+
     <br><br>
     <div class="col-sm-2 col-sm-push-5">
       <br>

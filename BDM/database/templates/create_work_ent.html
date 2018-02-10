@@ -3,7 +3,118 @@
 <form action='' method="POST">
   <div class="form-group">
     {% csrf_token %}
-    {{ form.as_p }}
+      <div class="col-sm-12">
+      <font size="6">
+        <span class="label label-primary">{% trans "Obrigatório" %}</span>
+      </font>
+</div>
+
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Identificador" %}</span>
+      </font>
+                    {{ form.identifier  }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Titulo do trabalho" %}</span>
+      </font>
+                    {{ form.titleOfTheWork  }}
+    </div>
+
+      <div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Local de origem do trabalho" %}</span>
+      </font>
+                    {{ form.placeOfOriginOfTheWork }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Data do trabalho" %}</span>
+      </font>
+                    {{ form.dateOfTheWork }}
+    </div>
+
+      <div class="col-sm-12">
+      <font size="6">
+        <span class="label label-primary">{% trans "Optativo" %}</span>
+      </font>
+    </div>
+
+      <div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Outras caracteristicas" %}</span>
+      </font>
+                    {{ form.otherDistinguishingCharacteristic }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Forma do trabalho" %}</span>
+      </font>
+                    {{ form.formOfWork }}
+    </div>
+
+      {#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Titulo da expressão" %}</span>#}
+{#      </font>#}
+{#                    {{ form.intendedTermination }}#}
+{#    </div>#}
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Audiencia do trabalho" %}</span>
+      </font>
+                    {{ form.intendedAudience }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Contexto para o trabalho" %}</span>
+      </font>
+                    {{ form.contextForTheWork }}
+    </div>
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Titulo da expressão" %}</span>#}
+{#      </font>#}
+{#                    {{ form.mediumOfPerformance }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Titulo da expressão" %}</span>#}
+{#      </font>#}
+{#                    {{ form.numericDesignation }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Titulo da expressão" %}</span>#}
+{#      </font>#}
+{#                    {{ form.key }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Titulo da expressão" %}</span>#}
+{#      </font>#}
+{#                    {{ form.coordinates }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Titulo da expressão" %}</span>#}
+{#      </font>#}
+{#                    {{ form.equinox }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Titulo da expressão" %}</span>#}
+{#      </font>#}
+{#                    {{ form.subjectOfTheWork }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Titulo da expressão" %}</span>#}
+{#      </font>#}
+{#                    {{ form.history }}#}
+{#    </div>#}
+
     <br><br>
     <div class="col-sm-2 col-sm-push-5">
       <br>

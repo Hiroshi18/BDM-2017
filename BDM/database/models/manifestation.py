@@ -9,13 +9,15 @@ from database.models import ExprEnt
 
 
 class ManifEnt(models.Model):
-    identifier = models.CharField(max_length=1000, blank=True, null=True)
-    titleOfTheManifestation = models.CharField(max_length=1000, blank=True, null=True)
+    identifier = models.CharField(max_length=1000, blank=False, null=True)
+    titleOfTheManifestation = models.CharField(max_length=1000, blank=False, null=True)
+    dateOfPublicationDistribution = models.DateField(blank=False, default=date.today)
+    placeOfPublicationDistribution = models.CharField(max_length=1000, blank=False, null=True)
+    relatedExprEnt = models.ForeignKey(ExprEnt, related_name="relatedExprEnt")
+
     statementOfResponsibility = models.CharField(max_length=1000, blank=True, null=True)
     editionIssueDesignation = models.CharField(max_length=1000, blank=True, null=True)
-    placeOfPublicationDistribution = models.CharField(max_length=1000, blank=True, null=True)
     publisherDistributor = models.CharField(max_length=1000, blank=True, null=True)
-    dateOfPublicationDistribution = models.DateField(blank=False, default=date.today)
     fabricatorManufacturer = models.CharField(max_length=1000, blank=True, null=True)
     seriesStatement = models.CharField(max_length=1000, blank=True, null=True)
     formOfCarrier = models.CharField(max_length=1000, blank=True, null=True)
@@ -48,7 +50,6 @@ class ManifEnt(models.Model):
     fileCharacteristics = models.CharField(max_length=1000, blank=True, null=True)
     modeOfAccess = models.CharField(max_length=1000, blank=True, null=True)
     accessAddress = models.CharField(max_length=1000, blank=True, null=True)
-    relatedExprEnt = models.ForeignKey(ExprEnt, related_name="relatedExprEnt")
 
     relatedItemList = models.ManyToManyField(
         'ItemEnt',

@@ -8,10 +8,11 @@ from django.db import models
 
 
 class WorkEnt(models.Model):
-    identifier = models.CharField(max_length=1000, blank=True, null=True)
-    titleOfTheWork = models.CharField(max_length=1000, blank=True, null=True)
-    formOfWork = models.CharField(max_length=1000, blank=True, null=True)
+    identifier = models.CharField(max_length=1000, blank=False, null=True)
+    titleOfTheWork = models.CharField(max_length=1000, blank=False, null=True)
+    formOfWork = models.CharField(max_length=1000, blank=False, null=True)
     dateOfTheWork = models.DateField(blank=False, default=date.today)
+
     otherDistinguishingCharacteristic = models.CharField(max_length=1000, blank=True, null=True)
     intendedTermination = models.CharField(max_length=1000, blank=True, null=True)
     intendedAudience = models.CharField(max_length=1000, blank=True, null=True)

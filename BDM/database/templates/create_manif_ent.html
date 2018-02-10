@@ -4,7 +4,258 @@
 <form action='' method="POST">
   <div class="form-group">
     {% csrf_token %}
-    {{ form.as_p }}
+<div class="col-sm-12">
+      <font size="6">
+        <span class="label label-primary">{% trans "Obrigatório" %}</span>
+      </font>
+</div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Identificador" %}</span>
+      </font>
+            {{ form.identifier  }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Titulo da Manifestação" %}</span>
+      </font>
+            {{ form.titleOfTheManifestation  }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Data da publicação" %}</span>
+      </font>
+            {{ form.dateOfPublicationDistribution  }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Local de Origem da publicadora" %}</span>
+      </font>
+            {{ form.placeOfPublicationDistribution  }}
+    </div>
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Expressão relacionada" %}</span>
+      </font>
+            {{ form.relatedExprEnt  }}
+    </div>
+
+      <div class="col-sm-12">
+      <font size="6">
+        <span class="label label-primary">{% trans "Optativo" %}</span>
+      </font>
+</div>
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.statementOfResponsibility  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.editionIssueDesignation  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.publisherDistributor  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.fabricatorManufacturer  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.seriesStatement  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.formOfCarrier  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.extentOfTheCarrier  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.physicalMedium  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.captureMode  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.dimensionsOfTheCarrier  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.manifestationIdentifier  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.sourceForAcquisitionAccessAuthorization  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.termsOfAvailability  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.accessRestrictionsOnTheManifestation  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.typeface  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.typeSize  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.foliation  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.collation  }}#}
+{#    </div>#}
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Status da publicação" %}</span>
+      </font>
+            {{ form.publicationStatus  }}
+    </div>
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.numbering  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.playingSpeed  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.grooveWidth  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.kindOfCutting  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.tapeConfiguration  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.kindOfSound  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.specialReproductionCharacteristic  }}#}
+{#    </div>#}
+<div class="col-sm-12">
+      <font size="4">
+        <span class="label label-primary">{% trans "Cor" %}</span>
+      </font>
+            {{ form.colour  }}
+    </div>
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.reductionRatio  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.polarity  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.generation  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.presentationFormat  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.systemRequirements  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.fileCharacteristics  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.modeOfAccess  }}#}
+{#    </div>#}
+{#<div class="col-sm-12">#}
+{#      <font size="4">#}
+{#        <span class="label label-primary">{% trans "Identificador do item" %}</span>#}
+{#      </font>#}
+{#            {{ form.accessAddress  }}#}
+{#    </div>#}
+
     <br><br>
     <div class="col-sm-2 col-sm-push-5">
       <br>

@@ -4,6 +4,12 @@
 <form action='' method="POST">
   <div class="form-group">
     {% csrf_token %}
+
+      <div class="col-sm-12">
+      <font size="8">
+        <span class="label label-primary">{% trans "Expressão" %}</span>
+      </font>
+</div>
 <div class="col-sm-12">
       <font size="6">
         <span class="label label-primary">{% trans "Obrigatório" %}</span>
@@ -40,7 +46,7 @@
 
       <div class="col-sm-12">
       <font size="4">
-        <span class="label label-primary">{% trans "Trabalho Relacionado" %}</span>
+        <span class="label label-primary">{% trans "Obra Relacionada" %}</span>
       </font>
             {{ form.relatedWorkEnt }}
     </div>

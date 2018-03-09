@@ -4,6 +4,11 @@
 <form action='' method="POST">
   <div class="form-group">
     {% csrf_token %}
+      <div class="col-sm-12">
+      <font size="8">
+        <span class="label label-primary">{% trans "Manifestação" %}</span>
+      </font>
+</div>
 <div class="col-sm-12">
       <font size="6">
         <span class="label label-primary">{% trans "Obrigatório" %}</span>
